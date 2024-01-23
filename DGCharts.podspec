@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "12.0"
   s.tvos.deployment_target = "12.0"
   s.osx.deployment_target = "10.13"
-  s.source = { :git => "https://github.com/Neena0727/Charts.git", :commit => 'ee48a3808068b4bb9d7cb7c2b4b824b3f626daf8'  }
+  s.source = { :git => "https://github.com/Neena0727/Charts.git", :commit => 'c332fe94e622a709de011557e8d8a40e66a055f5'  }
   s.default_subspec = "Core"
   s.swift_version = '5.7'
   s.cocoapods_version = '>= 1.5.0'
