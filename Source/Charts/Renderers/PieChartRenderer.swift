@@ -356,7 +356,7 @@ open class PieChartRenderer: NSObject, DataRenderer
             let lineHeight = valueFont.lineHeight
             
             let formatter = dataSet.valueFormatter
-            
+            var offset = 0.15
             for j in 0 ..< dataSet.entryCount
             {
                 guard let e = dataSet.entryForIndex(j) else { continue }
@@ -402,10 +402,12 @@ open class PieChartRenderer: NSObject, DataRenderer
 
                 if drawXOutside || drawYOutside
                 {
-                    let valueLineLength1 = dataSet.valueLinePart1Length
+                    let valueLineLength1 = e.y > 1.0 ? dataSet.valueLinePart1Length : dataSet.valueLinePart1Length + offset
                     let valueLineLength2 = dataSet.valueLinePart2Length
                     let valueLinePart1OffsetPercentage = dataSet.valueLinePart1OffsetPercentage
-
+                    if e.y < 1.0 {
+                        offset += 0.2
+                    }
                     var pt2: CGPoint
                     var labelPoint: CGPoint
                     var align: TextAlignment
